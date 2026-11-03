@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna Lovsky. Product UX & Systems Designer</title>
+    <title>Anna Lovsky | Senior Product Designer</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -32,7 +32,6 @@
         }
 
         .header {
-            position: relative;
             margin-bottom: 24px;
         }
 
@@ -46,7 +45,6 @@
             font-size: 72px;
             font-weight: 800;
             line-height: 1.1;
-            color: #090909;
             letter-spacing: -0.015em;
             margin-bottom: 16px;
             word-spacing: 9999px;
@@ -56,18 +54,16 @@
             background: #FBD34B;
             padding: 16px 24px;
             margin-top: 32px;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         .yellow-bar h2 {
             font-family: "Heebo", sans-serif;
             font-size: 16px;
             font-weight: 700;
-            color: #090909;
-            letter-spacing: 0;
         }
 
-        .header .tagline {
+        .tagline {
             font-size: 14px;
             line-height: 1.6;
             color: #3A3A3A;
@@ -78,10 +74,10 @@
         .contact-info {
             display: flex;
             gap: 24px;
+            flex-wrap: wrap;
+            align-items: center;
             font-size: 13px;
             color: #6B6B6B;
-            flex-wrap: nowrap;
-            align-items: center;
         }
 
         .contact-info a {
@@ -91,7 +87,7 @@
         }
 
         .summary {
-            padding: 8px 0 64px 0;
+            padding: 8px 0 40px;
             border-bottom: 1px solid #CECECE;
             margin-bottom: 40px;
         }
@@ -111,17 +107,18 @@
             margin-bottom: 40px;
         }
 
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
         .section-title {
             font-family: "Heebo", sans-serif;
             font-size: 20px;
             font-weight: 800;
-            color: #090909;
             margin-bottom: 24px;
             letter-spacing: -0.015em;
+        }
+
+        .studio-note {
+            font-size: 14px;
+            color: #3A3A3A;
+            margin-bottom: 24px;
         }
 
         .experience {
@@ -142,17 +139,15 @@
             align-items: baseline;
             margin-bottom: 6px;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 8px 16px;
         }
 
         .exp-company {
             font-weight: 700;
-            color: #090909;
             font-size: 15px;
         }
 
         .exp-title {
-            color: #090909;
             font-weight: 600;
             font-size: 14px;
         }
@@ -169,11 +164,8 @@
             margin-top: 6px;
         }
 
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 40px;
+        .exp-description p + p {
+            margin-top: 6px;
         }
 
         .education-item {
@@ -186,7 +178,6 @@
 
         .education-title {
             font-weight: 600;
-            color: #090909;
             font-size: 14px;
             margin-bottom: 4px;
         }
@@ -207,40 +198,24 @@
 
         .skill-label {
             font-weight: 700;
-            color: #090909;
             font-size: 14px;
             margin-bottom: 6px;
         }
 
-        .skill-text {
+        .skill-text,
+        .volunteer-item {
             color: #3A3A3A;
             font-size: 13px;
             line-height: 1.5;
         }
 
-        .volunteer-item,
-        .project-item {
+        .volunteer-item {
             margin-bottom: 12px;
-            font-size: 13px;
-            line-height: 1.5;
-            color: #3A3A3A;
         }
 
-        .volunteer-item strong,
-        .project-item strong {
+        .volunteer-item strong {
             color: #090909;
             font-weight: 700;
-        }
-
-        .dates-small {
-            color: #9D9D9D;
-            font-size: 12px;
-        }
-
-        .interests p {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #3A3A3A;
         }
 
         .footer {
@@ -260,242 +235,317 @@
                 font-size: 36px;
             }
 
-            .two-column {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
             .contact-info {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 8px;
             }
 
             .exp-header {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 4px;
             }
+        }
+
+        @page {
+            size: A4;
+            margin: 14mm;
         }
 
         @media print {
             body {
                 background: white;
                 padding: 0;
+                font-size: 10pt;
+            }
+
+            .header-top {
+                padding-top: 0;
+                margin-bottom: 0;
+            }
+
+            .header h1 {
+                font-size: 40pt;
+                word-spacing: normal;
+            }
+
+            .yellow-bar {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                margin-top: 16px;
+            }
+
+            .summary {
+                padding-bottom: 16px;
+                margin-bottom: 20px;
+            }
+
+            .section {
+                margin-bottom: 24px;
+            }
+
+            .section-title {
+                break-after: avoid;
+                margin-bottom: 12px;
+            }
+
+            .experience,
+            .education-item,
+            .skill-category,
+            .volunteer-item {
+                break-inside: avoid;
+            }
+
+            .experience {
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+            }
+
+            .contact-info {
+                flex-direction: row;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .exp-header {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 8px;
+            }
+
+            .exp-description,
+            .summary p {
+                font-size: 10pt;
+            }
+
+            .footer {
+                padding: 16px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+<main class="container">
+    <header class="header">
+        <div class="header-top"></div>
+        <h1>Anna Lovsky</h1>
 
-        <!-- Header -->
-        <div class="header">
-            <div class="header-top"></div>
-            <h1>Anna Lovsky.</h1>
-            <p class="tagline">I help organizations with complex systems define the structure, workflows, and logic that teams need to work clearly and consistently.</p>
-            <div class="contact-info">
-                <span>0544-818315</span>
-                <span><a href="mailto:anna@lovskyuxstudio.com">anna@lovskyuxstudio.com</a></span>
-                <span><a href="https://LovskyUXStudio.com">LovskyUXStudio.com</a></span>
-                <span><a href="https://www.linkedin.com/in/anna-lovsky/">LinkedIn</a></span>
-            </div>
-            <div class="yellow-bar">
-                <h2>Product UX & Systems Designer | From strategy to build</h2>
-            </div>
+        <div class="yellow-bar">
+            <h2>Senior Product Designer | Research, UX Strategy &amp; UI Design</h2>
         </div>
 
-        <!-- Summary -->
-        <div class="summary">
-            <p>Complexity isn't the problem. Confusion is.</p>
-            <p style="margin-top: 12px;">I help teams building complex products and systems define the underlying structure, workflows, and relationships before that complexity becomes confusion, inconsistency, and rework. My work spans research, information architecture, product design, and systems thinking, with a focus on products that serve multiple user roles, regulatory constraints, and complex operational workflows.</p>
-            <p style="margin-top: 12px;">I work across the full product lifecycle, from early research and structure definition through design and implementation. I collaborate closely with product managers, engineers, and domain experts to ensure that system logic is sound before it is built, and that what gets built matches how people actually need to work.</p>
+        <p class="tagline">I design complex digital products that help people navigate demanding workflows, make informed decisions, and get things done.</p>
+
+        <div class="contact-info">
+            <span>0544-818315</span>
+            <span><a href="mailto:anna@lovskyuxstudio.com">anna@lovskyuxstudio.com</a></span>
+            <span><a href="https://www.lovskyuxstudio.com/">Lovsky UX Studio</a></span>
+            <span><a href="https://www.linkedin.com/in/anna-lovsky/">LinkedIn</a></span>
+        </div>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+        <h2 class="section-title" id="summary-title">Professional Summary</h2>
+        <p>Senior Product Designer with over 13 years of experience in UX/UI and digital product design, specializing in complex B2B, healthcare, and developer-facing products.</p>
+        <p>I combine user research, systems thinking, information architecture, interaction design, and hands-on UI design to make complex products clearer and more usable.</p>
+        <p>My experience includes multi-role platforms, clinical workflows, permission models, and products with demanding operational constraints.</p>
+        <p>I collaborate closely with product managers, engineers, users, and domain experts, from discovery and problem definition through prototyping, detailed design, design systems, and implementation.</p>
+    </section>
+
+    <section class="section" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">Core Skills</h2>
+
+        <div class="skill-category">
+            <h3 class="skill-label">Product &amp; UX Design</h3>
+            <p class="skill-text">Interaction Design, UI Design, User Journeys, Wireframing, Prototyping, Responsive Design, Complex Workflows.</p>
         </div>
 
-        <!-- Work Experience -->
-        <div class="section">
-            <h2 class="section-title">Work Experience</h2>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Myop</span>
-                    <span class="exp-dates">2025 - Now</span>
-                </div>
-                <div class="exp-title">Strategic Product Designer</div>
-                <div class="exp-description">Led UX thinking across complex product workflows, partnering with product and engineering to define scalable system structures, interaction logic, and implementation-aware solutions for a multi-role platform.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">EasySend</span>
-                    <span class="exp-dates">2024 - 2025</span>
-                </div>
-                <div class="exp-title">Product Designer</div>
-                <div class="exp-description">Worked on complex enterprise workflows involving multiple stakeholders and operational constraints. Focused on simplifying high-stakes processes and translating strategic product requirements into structured, clear user experiences.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Bikes4Kids</span>
-                    <span class="exp-dates">2025</span>
-                </div>
-                <div class="exp-title">UX Researcher</div>
-                <div class="exp-description">Conducted exploratory UX research using Google Analytics, Hotjar, best-practice analysis, and stakeholder insights to identify usability and conversion opportunities. Translated findings into actionable improvements grounded in user behavior.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Frontegg</span>
-                    <span class="exp-dates">2023 - 2024</span>
-                </div>
-                <div class="exp-title">UX Research & Product Designer</div>
-                <div class="exp-description">Worked on a developer-facing platform with complex permission models and multi-tenant architectures. Translated technically dense domain knowledge into structured, usable interfaces. Contributed to research, information architecture, and detailed design across multiple product areas.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">BrainsWay</span>
-                    <span class="exp-dates">2022 - 2024</span>
-                </div>
-                <div class="exp-title">UX Research & Product Designer</div>
-                <div class="exp-description">Defined the information architecture, object model, and navigation structure of a clinical platform at an international medical company. Worked closely with cross-functional stakeholders across the US and Israel to translate complex domain knowledge into a system built for precision, compliance, and safe use.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Pandologic</span>
-                    <span class="exp-dates">2022 - 2023</span>
-                </div>
-                <div class="exp-title">UX/UI Designer</div>
-                <div class="exp-description">Worked on an international HR platform. Brought structure to the component library and design system. Contributed to feature design from research through delivery, including user journey mapping and end-to-end ownership of product backlog items.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Dosentrx</span>
-                    <span class="exp-dates">2019 - 2022</span>
-                </div>
-                <div class="exp-title">Product & Visual Communication Designer</div>
-                <div class="exp-description">Designed the digital language and user interface for a medical device across all platforms. Applied service design thinking and Pure UX methodology, working within strict operational and regulatory requirements.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Various Clients</span>
-                    <span class="exp-dates">2013 - 2019</span>
-                </div>
-                <div class="exp-title">UI/UX and Visual Communication Designer</div>
-                <div class="exp-description">Worked with large and medium organizations, entrepreneurs, and UX studios. Clients included Kramer Electronics, ProdUX studio (Dosentrx, Open Legacy, Resec), GUX Studio, and others across regulated and complex domains.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Manfrotto bags LTD (Vitec Group)</span>
-                    <span class="exp-dates">2009 - 2013</span>
-                </div>
-                <div class="exp-title">Art Director, Web & Print Designer</div>
-                <div class="exp-description">Focused on web and print design within the marketing department of an international product company. Served as art director for product photo shoots. Early UX work included consulting on a digital catalog for iPhone.</div>
-            </div>
-
-            <div class="experience">
-                <div class="exp-header">
-                    <span class="exp-company">Designer at newspaper and branding agencies</span>
-                    <span class="exp-dates">2007 - 2009</span>
-                </div>
-            </div>
+        <div class="skill-category">
+            <h3 class="skill-label">Research &amp; Discovery</h3>
+            <p class="skill-text">User Interviews, Stakeholder Interviews, Usability Research, Behavioral Analytics, Concept Validation, Problem Framing.</p>
         </div>
 
-        <!-- Education & Skills -->
-        <div class="two-column">
-            <div>
-                <h2 class="section-title">Education</h2>
-                <div class="education-item">
-                    <div class="education-title">Bachelor of Arts. Bezalel Academy of Art and Design</div>
-                    <div class="education-detail">Department of Visual Communications (2003–2007)</div>
-                </div>
-                <div class="education-item">
-                    <div class="education-title">Pure UX Course</div>
-                    <div class="education-detail">Learned from Marcelle Caspi through collaboration and course recordings (2013–2022)</div>
-                </div>
-                <div class="education-item">
-                    <div class="education-title">Object Oriented UX Fundamentals (OOUX)</div>
-                    <div class="education-detail">Taught by Joe Natoli & Sophia V Prater on Udemy (2023)</div>
-                </div>
-            </div>
-
-            <div>
-                <h2 class="section-title">Skills</h2>
-                <div class="skill-category">
-                    <div class="skill-label">Systems Thinking & Information Architecture</div>
-                    <div class="skill-text">Define object models, navigation structures, and workflows for complex multi-role products before design begins.</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Cross-Functional Collaboration</div>
-                    <div class="skill-text">Work closely with product managers, engineers, domain experts, and organizational stakeholders across disciplines and locations.</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Structured Research & Validation</div>
-                    <div class="skill-text">Conduct user research, stakeholder interviews, and best-practice analysis to ground design decisions in evidence.</div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-label">Design Execution</div>
-                    <div class="skill-text">Produce wireframes, prototypes, and detailed interfaces. Maintain component libraries for large-scale or standalone products.</div>
-                </div>
-            </div>
+        <div class="skill-category">
+            <h3 class="skill-label">Information Architecture &amp; Systems</h3>
+            <p class="skill-text">Object-Oriented UX (OOUX), Object Modeling, Navigation, Roles &amp; Permissions, Workflow States, Design Systems.</p>
         </div>
 
-        <!-- Volunteering & Leadership -->
-        <div class="section">
-            <h2 class="section-title">Volunteering & Leadership</h2>
-            <p style="font-size: 13px; color: #6B6B6B; margin-bottom: 16px;">Communities I've started or stewarded.</p>
-            <div class="volunteer-item">
-                <strong>Founder & Lead.</strong> Claude Code Study Group for Designers. Created and lead a community of 15 women designers learning AI-assisted design and development workflows. <span class="dates-small">(Now)</span>
+        <div class="skill-category">
+            <h3 class="skill-label">Tools &amp; Collaboration</h3>
+            <p class="skill-text">Figma, Miro, Hotjar, AI-assisted Prototyping, Cross-functional Collaboration.</p>
+        </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience-title">
+        <h2 class="section-title" id="experience-title">Professional Experience</h2>
+
+        <p class="studio-note">
+            <strong>Lovsky UX Studio | Independent Product/UX Designer</strong><br>
+            Jan 2013 to Present<br>
+            Selected client projects
+        </p>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">MyOp</h3>
+                <span class="exp-dates">Jul 2025 to Jun 2026</span>
             </div>
-            <div class="volunteer-item">
-                <strong>Team Member.</strong> We Business Community <span class="dates-small">(Now)</span>
+            <div class="exp-title">Product Designer</div>
+            <div class="exp-description">
+                <p>Designed workflows and interfaces for an AI-assisted design-to-code platform, including the Component Builder, Experience Editor, and Rollout Manager.</p>
+                <p>Partnered with product and engineering teams to define interaction patterns, component behavior, and implementation-ready designs.</p>
             </div>
-            <div class="volunteer-item">
-                <strong>Mentor.</strong> UX/UI designers at Startup Designers <span class="dates-small">(2018 – Now)</span>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Ketalix</h3>
+                <span class="exp-dates">2025 to 2026</span>
             </div>
-            <div class="volunteer-item">
-                <strong>Volunteer Organizer.</strong> Creative Mornings Jerusalem <span class="dates-small">(2018)</span>
+            <div class="exp-title">Product/UX Designer</div>
+            <div class="exp-description">
+                <p>Designed patient and clinician experiences for a mental health treatment platform.</p>
+                <p>Mapped treatment journeys, session states, and role-specific workflows. Designed patient-facing preparation and integration experiences alongside clinician-facing patient management and session views.</p>
             </div>
-            <div class="volunteer-item">
-                <strong>Rebranding PM Community</strong> <span class="dates-small">(2022)</span>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">EasySend</h3>
+                <span class="exp-dates">Oct 2024 to Oct 2025</span>
             </div>
+            <div class="exp-title">Product Designer</div>
+            <div class="exp-description">
+                <p>Contributed to product discovery, research, and North Star experience design for an enterprise platform.</p>
+                <p>Designed complex integration and management workflows, translating product requirements into user journeys, interface structures, and detailed interaction designs.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Bikes4Kids</h3>
+                <span class="exp-dates">2025</span>
+            </div>
+            <div class="exp-title">UX Researcher</div>
+            <div class="exp-description">
+                <p>Conducted UX research using Google Analytics, Hotjar, stakeholder insights, and usability best practices.</p>
+                <p>Identified friction points and conversion opportunities, translating behavioral findings into actionable product recommendations.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Frontegg</h3>
+                <span class="exp-dates">Nov 2023 to Mar 2024</span>
+            </div>
+            <div class="exp-title">UX Research &amp; Product Designer</div>
+            <div class="exp-description">
+                <p>Worked on a developer-facing platform involving complex permissions, user management, and multi-tenant environments.</p>
+                <p>Translated technical requirements into understandable workflows and interfaces, contributing to research, information architecture, and detailed product design.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">BrainsWay</h3>
+                <span class="exp-dates">Jul 2022 to Sep 2024</span>
+            </div>
+            <div class="exp-title">UX Research &amp; Product Designer</div>
+            <div class="exp-description">
+                <p>Researched and designed a clinical platform during its transition to a cloud-based product.</p>
+                <p>Used Object-Oriented UX to map clinics, devices, patients, sessions, and user roles. Defined information architecture, permissions, and navigation, and developed prototypes and detailed UI in collaboration with stakeholders in Israel and the US.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">PandoLogic</h3>
+                <span class="exp-dates">Jul 2022 to Jun 2023</span>
+            </div>
+            <div class="exp-title">UX/UI Designer</div>
+            <div class="exp-description">
+                <p>Contributed to UX/UI design for an international HR technology platform.</p>
+                <p>Worked on product features from research and user journey mapping through detailed design and delivery. Improved the component library and design system to support greater interface consistency.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Dosentrx, via ProdUX Studio</h3>
+                <span class="exp-dates">Oct 2019 to Oct 2021</span>
+            </div>
+            <div class="exp-title">Product &amp; UI Designer</div>
+            <div class="exp-description">
+                <p>Designed accessible interfaces and a visual design system for a connected medication device and its clinical Therapy Manager portal.</p>
+                <p>Worked across multiple screen sizes and languages, addressing information hierarchy, touch interactions, user guidance, and implementation details for older adults and care teams.</p>
+            </div>
+        </article>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Various Clients</h3>
+                <span class="exp-dates">2013 to 2019</span>
+            </div>
+            <div class="exp-title">UX/UI &amp; Visual Communication Designer</div>
+            <div class="exp-description">
+                <p>Designed digital experiences for organizations, startups, and design studios, including collaborations with ProdUX Studio and GUX Studio.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="section" aria-labelledby="earlier-title">
+        <h2 class="section-title" id="earlier-title">Earlier In-house Experience</h2>
+
+        <article class="experience">
+            <div class="exp-header">
+                <h3 class="exp-company">Manfrotto Bags, Vitec Group</h3>
+                <span class="exp-dates">2009 to 2013</span>
+            </div>
+            <div class="exp-title">Art Director &amp; Designer</div>
+            <div class="exp-description">
+                <p>Led visual design for web, print, and product marketing materials. Art-directed product photography and contributed to early mobile digital catalog experiences.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="section" aria-labelledby="education-title">
+        <h2 class="section-title" id="education-title">Education</h2>
+
+        <div class="education-item">
+            <div class="education-title">Bachelor of Design (B.Des.), Bezalel Academy of Art and Design</div>
+            <div class="education-detail">Visual Communications, 2003 to 2007</div>
         </div>
 
-        <!-- Side Projects -->
-        <div class="section">
-            <h2 class="section-title">Side Projects</h2>
-            <p style="font-size: 13px; color: #6B6B6B; margin-bottom: 12px;">Work outside client work.</p>
-            <div class="project-item">
-                <strong>Host & Owner.</strong> Podcast "Handneda": Communication between product and UX
-            </div>
-            <div class="project-item">
-                <strong>UX Leadership & Consulting.</strong> Early-stage startups
-            </div>
+        <div class="education-item">
+            <div class="education-title">Pure UX Course</div>
+            <div class="education-detail">Learned from Marcelle Caspi through collaboration and course recordings, 2013 to 2022</div>
         </div>
 
-        <!-- Interests -->
-        <div class="section">
-            <h2 class="section-title">Interests & Hobbies</h2>
-            <div class="interests">
-                <p>Practicing mindfulness and meditation with essential oils</p>
-            </div>
+        <div class="education-item">
+            <div class="education-title">Object Oriented UX Fundamentals (OOUX)</div>
+            <div class="education-detail">Taught by Joe Natoli &amp; Sophia V Prater on Udemy, 2023</div>
         </div>
+    </section>
 
-        <!-- Languages -->
-        <div class="section">
-            <h2 class="section-title">Languages</h2>
-            <div class="volunteer-item"><strong>Hebrew:</strong> Native proficiency</div>
-            <div class="volunteer-item"><strong>English:</strong> High proficiency</div>
-            <div class="volunteer-item"><strong>Russian:</strong> Mother tongue (living in Israel for +30 years)</div>
-        </div>
+    <section class="section" aria-labelledby="activities-title">
+        <h2 class="section-title" id="activities-title">Professional Activities</h2>
 
-        <!-- Footer -->
-        <div class="footer">
-            <p>For recommendations, please contact me directly or visit my website.</p>
-        </div>
+        <p class="volunteer-item"><strong>Founder &amp; Lead.</strong> Claude Code Study Group for Designers. Lead a community of designers learning AI-assisted design and development workflows.</p>
+        <p class="volunteer-item"><strong>Mentor.</strong> UX/UI designers at Startup Designers.</p>
+        <p class="volunteer-item"><strong>Host &amp; Owner.</strong> Podcast <span lang="he" dir="rtl">הנדנדה</span> (Hanadneda), exploring communication between product and UX.</p>
+    </section>
 
-    </div>
+    <section class="section" aria-labelledby="languages-title">
+        <h2 class="section-title" id="languages-title">Languages</h2>
+        <p class="volunteer-item"><strong>Russian:</strong> Native</p>
+        <p class="volunteer-item"><strong>Hebrew:</strong> Fluent, everyday working language</p>
+        <p class="volunteer-item"><strong>English:</strong> Fluent professional proficiency</p>
+    </section>
+
+    <footer class="footer">
+        <p>For recommendations, please contact me directly or visit my website.</p>
+    </footer>
+</main>
 </body>
 </html>
